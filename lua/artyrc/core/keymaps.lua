@@ -2,10 +2,18 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+-- macros
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", ";", ":", { desc = "move to command mode with ; instead of : " })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+
+keymap.set("n", "<A-k>", ":m .-2<CR>", { desc = "move line up" })
+keymap.set("v", "<A-k>", ":m -2<CR>gv", { desc = "move selected text up" })
+keymap.set("n", "<A-j>", ":m .+1<CR>", { desc = "move line down" })
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv", { desc = "Move selected text down" })
+--Telescope mappings
+keymap.set("n", "<leader>fg", ":Telescope git_files<CR>")
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
@@ -22,3 +30,7 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Lazy shortcut
+
+keymap.set("n", "<leader>l", ":Lazy<CR>")
