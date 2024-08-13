@@ -3,7 +3,7 @@ return {
 	version = "*",
 	opts = {
 		size = 20,
-		open_mapping = [[<C-\>]], -- default key mapping to toggle terminal
+		open_mapping = [[<C-/>]], -- default key mapping to toggle terminal
 		shade_filetypes = {},
 		shade_terminals = true,
 		shading_factor = 2,

@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+--highlight selected text
+keymap.set("v", "<leader>se", '"xy/<C-r>x\\><CR>N')
+
 -- macros
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", ";", ":", { desc = "move to command mode with ; instead of : " })
